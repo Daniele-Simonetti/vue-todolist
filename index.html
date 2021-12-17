@@ -15,7 +15,11 @@
 <body>
   <div id="app" class="container">
     <ul>
-      <li v-for="todo in todos" v-bind:class="(todo.done == true) ? 'true' : ''">{{ todo.text }} {{ todo.done }}
+      <li v-for="todo in todos" v-bind:class="(todo.done == true) ? 'true' : ''">
+        <div class="todo-text">
+          {{ todo.text }}
+        </div>
+        <i @click="removeTodo(todo)" class="fas fa-times-circle del-todo"></i>
       </li>
     </ul>
   </div>

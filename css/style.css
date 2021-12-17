@@ -11,3 +11,11 @@ html {
 .true {
   text-decoration: line-through;
 }
+
+ul li {
+  display: flex;
+}
+
+li i {
+  cursor: pointer;
+}
