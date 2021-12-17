@@ -14,21 +14,29 @@
 </head>
 <body>
   <div id="app" class="container">
-    <div class="input">
-      <input @keyup.enter="addTodo" v-model="todoNew" type="text" placeholder="Add new task">
-      <button @click="addTodo">Add</button>
-    </div>
-    <ul>
-      <li v-for="(todo, index) in todos" v-bind:class="(todo.done == true) ? 'true' : 'false'">
-        <div class="todo-done">
-          <input @click="doneAsseg(todo)" type="checkbox">
+    <header>
+      <h1>ToDoList</h1>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="input">
+          <input @keyup.enter="addTodo" v-model="todoNew" type="text" placeholder="Add new task">
+          <button @click="addTodo">Add</button>
         </div>
-        <div class="todo-text">
-          {{ todo.text }}
-        </div>
-        <i @click="removeTodo(index)" class="fas fa-times-circle del-todo"></i>
-      </li>
-    </ul>
+        <ul class="todo-list">
+          <li v-for="(todo, index) in todos" v-bind:class="(todo.done == true) ? 'true' : 'false'">
+            <!-- <div class="todo-done">
+              <input @click="doneAsseg(todo)" type="checkbox">
+            </div> -->
+            <div class="todo-text" @click="doneAsseg(todo)" >
+              {{ todo.text }}
+            </div>
+            <i @click="removeTodo(index)" class="fas fa-times-circle del-todo"></i>
+          </li>
+        </ul>
+      </div>
+
+    </main>
   </div>
   
   <script src="js/script.js"></script>
