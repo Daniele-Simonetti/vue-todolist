@@ -14,15 +14,19 @@
 </head>
 <body>
   <div id="app" class="container">
+    <div class="input">
+      <input @keyup.enter="addTodo" v-model="todoNew" type="text" placeholder="Add new task">
+      <button @click="addTodo">Add</button>
+    </div>
     <ul>
-      <li v-for="todo in todos" v-bind:class="(todo.done == true) ? 'true' : 'false'">
+      <li v-for="(todo, index) in todos" v-bind:class="(todo.done == true) ? 'true' : 'false'">
         <div class="todo-done">
           <input @click="doneAsseg(todo)" type="checkbox">
         </div>
         <div class="todo-text">
           {{ todo.text }}
         </div>
-        <i @click="removeTodo(todo)" class="fas fa-times-circle del-todo"></i>
+        <i @click="removeTodo(todo, index)" class="fas fa-times-circle del-todo"></i>
       </li>
     </ul>
   </div>
