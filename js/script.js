@@ -23,9 +23,9 @@ const app = new Vue(
           todo.done = false;
         }
       },
-      removeTodo: function (todo, index) {
-        this.todos.splice(todo, index); 
-        console.log(todo, index);
+      removeTodo: function (index) {
+        this.todos.splice(index, 1); 
+        console.log(index);
       },
       addTodo: function () {
         if (this.todoNew.length != 0) {
@@ -33,11 +33,11 @@ const app = new Vue(
             text: this.todoNew,
             done: ''
           }
-          this.todos.push(obj); 
+          this.todos.unshift(obj);
+          this.todoNew = ''; 
         }  
       },
     }
   }
 )
 
-// Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
