@@ -12,6 +12,9 @@ html {
   text-decoration: line-through;
 }
 
+.flase {
+  text-decoration: none;
+}
 ul li {
   display: flex;
 }

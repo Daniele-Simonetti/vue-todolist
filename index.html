@@ -15,7 +15,10 @@
 <body>
   <div id="app" class="container">
     <ul>
-      <li v-for="todo in todos" v-bind:class="(todo.done == true) ? 'true' : ''">
+      <li v-for="todo in todos" v-bind:class="(todo.done == true) ? 'true' : 'false'">
+        <div class="todo-done">
+          <input @click="doneAsseg(todo)" type="checkbox">
+        </div>
         <div class="todo-text">
           {{ todo.text }}
         </div>
