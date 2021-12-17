@@ -5,11 +5,11 @@ const app = new Vue(
       todoNew: '',
       todos: [
         {
-          text: 'prepare la pasta',
+          text: 'test uno ',
           done: ''
         },
         {
-          text: 'scola la pasta',
+          text: 'test due',
           done: ''
         },
       ]
