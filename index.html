@@ -13,6 +13,12 @@
   <title>ToDo</title>
 </head>
 <body>
+  <div id="app" class="container">
+    <ul>
+      <li v-for="todo in todos" v-bind:class="(todo.done == true) ? 'true' : ''">{{ todo.text }} {{ todo.done }}
+      </li>
+    </ul>
+  </div>
   
   <script src="js/script.js"></script>
 </body>
