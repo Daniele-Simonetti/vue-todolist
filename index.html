@@ -24,11 +24,11 @@
           <button @click="addTodo">Add</button>
         </div>
         <ul class="todo-list">
-          <li v-for="(todo, index) in todos" v-bind:class="(todo.done == true) ? 'true' : 'false'">
+          <li v-for="(todo, index) in todos">
             <!-- <div class="todo-done">
               <input @click="doneAsseg(todo)" type="checkbox">
             </div> -->
-            <div class="todo-text" @click="doneAsseg(todo)" >
+            <div class="todo-text" @click="doneAsseg(todo)" v-bind:class="(todo.done == true) ? 'true' : 'false'">
               {{ todo.text }}
             </div>
             <i @click="removeTodo(index)" class="fas fa-times-circle del-todo"></i>

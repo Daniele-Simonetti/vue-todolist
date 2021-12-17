@@ -78,6 +78,7 @@ ul li {
 li i {
   cursor: pointer;
   font-size: 3em;
+  color: white;
 }
 
 div.todo-text {
