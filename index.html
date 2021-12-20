@@ -31,7 +31,7 @@
             <div class="todo-text" @click="doneAsseg(todo)" v-bind:class="(todo.done == true) ? 'true' : 'false'">
               {{ todo.text }}
             </div>
-            <i @click="removeTodo(index)" class="fas fa-times-circle del-todo"></i>
+            <i @click="removeTodo(index)" class="fas fa-times-circle del-todo" v-show="todo.done == true"></i>
           </li>
         </ul>
       </div>
