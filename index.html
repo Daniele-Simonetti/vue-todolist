@@ -23,7 +23,7 @@
           <input @keyup.enter="addTodo" v-model="todoNew" type="text" placeholder="Add new task">
           <button @click="addTodo">Add</button>
         </div>
-        <ul class="todo-list">
+        <ul class="todo-list" v-if="todos.length > 0">
           <li v-for="(todo, index) in todos">
             <!-- <div class="todo-done">
               <input @click="doneAsseg(todo)" type="checkbox">
