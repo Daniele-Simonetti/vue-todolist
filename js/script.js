@@ -28,7 +28,7 @@ const app = new Vue(
         console.log(index);
       },
       addTodo: function () {
-        if (this.todoNew.length != 0) {
+        if (this.todoNew.trim().length != 0) {
           let obj = {
             text: this.todoNew,
             done: ''
